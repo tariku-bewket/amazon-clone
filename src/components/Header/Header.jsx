@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './header.module.css';
+import { Link } from 'react-router-dom';
 
 import { GrLocation } from 'react-icons/gr';
 import { IoIosSearch } from 'react-icons/io';
@@ -11,13 +12,12 @@ function Header() {
       <section>
         <div className={classes.header_container}>
           <div className={classes.logo_container}>
-            {/* logo */}
-            <a href="/">
+            <Link to="/">
               <img
                 src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                 alt="amazon logo"
               />
-            </a>
+            </Link>
 
             {/* Delivery Location*/}
             <div className={classes.delivery}>
@@ -44,7 +44,7 @@ function Header() {
           {/* right side link */}
 
           <div className={classes.order_container}>
-            <a href="" className={classes.language}>
+            <Link to="" className={classes.language}>
               <img
                 src="https://uxwing.com/wp-content/themes/uxwing/download/flags-landmarks/united-states-flag-icon.png"
                 alt="lang"
@@ -52,27 +52,27 @@ function Header() {
               <select name="" id="">
                 <option value="">EN</option>
               </select>
-            </a>
+            </Link>
             {/* three components */}
-            <a href="">
+            <Link to="/auth">
               <div>
                 <p>Hello, sign in</p>
                 <span>Account & Lists</span>
               </div>
-            </a>
+            </Link>
             {/* order */}
-            <a href="">
+            <Link to="/orders">
               <div>
                 <p>Returns</p>
                 <span>& Orders</span>
               </div>
-            </a>
+            </Link>
             {/* cart */}
-            <a href="" className={classes.cart}>
+            <Link to="/cart" className={classes.cart}>
               <BiCart size={40} />
               <span className={classes.order_amount}>0</span>
               <span>Cart</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

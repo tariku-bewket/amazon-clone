@@ -13,7 +13,7 @@ function Category() {
     },
     {
       title: 'Discover fashion trends',
-      name: "womans's clothing",
+      name: "women's clothing",
       imgLink: 'https://m.media-amazon.com/images/I/61xt3tiTsEL._AC_UL320_.jpg',
     },
     {
@@ -34,6 +34,7 @@ function Category() {
         return (
           <CategoryCard
             title={infos.title}
+            name={infos.name}
             imgLink={infos.imgLink}
             key={index}
           />

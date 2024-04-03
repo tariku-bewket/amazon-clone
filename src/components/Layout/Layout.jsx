@@ -6,7 +6,6 @@ function Layout({ children }) {
   return (
     <>
       <Header />
-      <LowerHeader />
       {children}
     </>
   );

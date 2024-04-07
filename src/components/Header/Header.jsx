@@ -7,16 +7,17 @@ import { IoIosSearch } from 'react-icons/io';
 import { BiCart } from 'react-icons/bi';
 import { DataContext } from '../DataProvider/DataProvider';
 import LowerHeader from './LowerHeader';
+import { auth } from '../../utility/firebase';
 
 function Header() {
-  const [{ basket }, dispatch] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
 
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
 
   return (
-    <section className={classes.fixed}>
+    <header className={classes.fixed}>
       <section>
         <div className={classes.header_container}>
           <div className={classes.logo_container}>
@@ -46,7 +47,7 @@ function Header() {
 
             <input type="text" name="" id="" placeholder="Search Amazon" />
 
-            <IoIosSearch size={40} />
+            <IoIosSearch size={38} />
           </div>
 
           {/* right side link */}
@@ -61,13 +62,26 @@ function Header() {
                 <option value="">EN</option>
               </select>
             </Link>
+
             {/* three components */}
-            <Link to="/auth">
+            <Link to={!user && '/auth'}>
               <div>
-                <p>Hello, sign in</p>
-                <span>Account & Lists</span>
+                <div>
+                  {user ? (
+                    <>
+                      <p>Hello, {user?.email?.split('@')[0]}</p>
+                      <span onClick={() => auth.signOut()}>Sign Out</span>
+                    </>
+                  ) : (
+                    <>
+                      <p>Hello, sign in</p>
+                      <span>Account & Lists</span>
+                    </>
+                  )}
+                </div>
               </div>
             </Link>
+
             {/* order */}
             <Link to="/orders">
               <div>
@@ -75,9 +89,10 @@ function Header() {
                 <span>& Orders</span>
               </div>
             </Link>
+
             {/* cart */}
             <Link to="/cart" className={classes.cart}>
-              <BiCart size={40} />
+              <BiCart size={30} />
               <span className={classes.order_amount}>{totalItem}</span>
               <span>Cart</span>
             </Link>
@@ -86,7 +101,7 @@ function Header() {
       </section>
 
       <LowerHeader />
-    </section>
+    </header>
   );
 }
 

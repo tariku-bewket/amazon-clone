@@ -1,0 +1,103 @@
+.signin {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+.signin img {
+  margin: 15px auto;
+  object-fit: contain;
+  width: 100px;
+}
+.signin__container {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 25px;
+}
+.signin__container h1 {
+  font-size: 23px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.signin__container form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.signin__container form div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.signin__container form label {
+  font-weight: 600;
+}
+.signin__container form input {
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  background-color: #fff;
+  width: 100%;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+.signin__container form input:focus {
+  outline: 2px solid skyblue;
+}
+.signin__button {
+  border: none;
+  width: 100%;
+  height: 30px;
+  background-color: #fed730;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.signin__button:hover {
+  background-color: #f7ca00;
+}
+.signin__agreement,
+.signin__help {
+  margin: 10px 0;
+}
+
+.signin a {
+  color: #256fc0;
+  text-decoration: none;
+}
+.signin a:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+.hr__line::after {
+  content: '';
+  border: 1px solid rgb(240, 240, 240);
+  margin-bottom: 10px;
+}
+.create__account__container {
+  width: 350px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.new__to_amazon {
+  color: rgb(115, 115, 115);
+}
+.create__account__button {
+  width: 100%;
+  height: 30px;
+  padding: 8px;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.create__account__button:hover {
+  background-color: #f7fafa;
+}

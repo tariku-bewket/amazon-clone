@@ -99,23 +99,28 @@
   align-items: center;
   gap: 10px;
   max-width: 450px;
-  flex: 0.4;
+  margin-right: 10px;
 }
 
 .order_container a {
   text-decoration: none;
   color: #fff;
+  padding: 5px 10px;
 }
 
 .order_container p {
   font-size: 13px;
 }
+.order_container a span {
+  font-weight: bold;
+  font-size: 14px;
+}
 
-.language {
+.order_container .language {
   width: 80px;
   display: flex;
   justify-content: center;
-  padding: 10px 0;
+  padding: 15px 10px;
 }
 
 .language select {
@@ -136,7 +141,7 @@
   position: absolute;
   font-weight: bold;
   top: 3px;
-  left: 19px;
+  left: 23px;
   font-size: 15px;
   background-color: #1a1a1a;
   color: orange;
@@ -146,7 +151,7 @@
 .delivery:hover,
 .logo_container a:hover,
 .lower_container ul li:hover {
-  border: 1px solid #fff;
+  outline: 1px solid #fff;
   border-radius: 3px;
 }
 
@@ -161,7 +166,8 @@
 }
 
 .lower_container ul li {
-  padding: 8px;
+  padding: 10px;
+  height: auto;
 }
 .lower_container ul li a {
   text-decoration: none;
@@ -171,7 +177,7 @@
 .lower_container ul li a:first-child {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
 }
 
 @media screen and (max-width: 576px) {

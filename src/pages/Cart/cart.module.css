@@ -70,6 +70,7 @@
 .subtotal > div,
 .subtotal span {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 @media screen and (max-width: 968px) {

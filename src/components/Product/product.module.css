@@ -52,6 +52,7 @@
 .product_flexed {
   box-shadow: none;
   display: flex;
+  align-items: center;
   height: 50vh;
   gap: 50px;
   width: 100%;

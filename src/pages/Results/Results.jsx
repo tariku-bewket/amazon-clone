@@ -18,7 +18,6 @@ function Results() {
       .get(`${productUrl}/products/category/${categoryName}`)
       .then((res) => {
         setResults(res.data);
-        console.log(res.data);
         setIsLoading(false);
       })
       .catch((error) => {

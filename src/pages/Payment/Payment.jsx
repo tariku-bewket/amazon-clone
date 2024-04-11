@@ -9,6 +9,7 @@ import { axiosInstance } from '../../api/axios';
 import { ClipLoader } from 'react-spinners';
 import { db } from '../../utility/firebase';
 import { useNavigate } from 'react-router-dom';
+import { Type } from '../../utility/action.type';
 
 function Payment() {
   const stripe = useStripe();
@@ -18,7 +19,8 @@ function Payment() {
   const [cardError, setCardError] = useState('');
   const [processing, setProcessing] = useState(false);
 
-  const [{ user, basket }] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
+  // console.log(user);
 
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
@@ -58,7 +60,7 @@ function Payment() {
 
       await db
         .collection('users')
-        .doc(user.id)
+        .doc(user.uid)
         .collection('orders')
         .doc(paymentIntent.id)
         .set({
@@ -66,6 +68,11 @@ function Payment() {
           amount: paymentIntent.amount,
           created: paymentIntent.created,
         });
+
+      // Empty the basket
+      dispatch({
+        type: Type.EMPTY_BASKET,
+      });
 
       setProcessing(false);
 
